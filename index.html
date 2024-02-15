@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>My first three.js app</title>
+        <link rel="stylesheet" type="text/css" href="reset.css" />
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+        <script type="importmap">
+            {
+              "imports": {
+                "three": "https://unpkg.com/three@v0.161.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@v0.161.0/examples/jsm/"
+              }
+            }
+          </script>
+	</head>
+	<body>
+        <header>
+            <section class="button-group">
+                <button class="tertiary icon dark"></button>
+                <button class="tertiary text dark"></button>
+                <button class="tertiary text dark"></button>
+            </section>
+            <section class="button-group">
+                <button class="secondary text dark"></button>
+                <button class="primary text dark"></button>
+            </section>
+        </header>
+        <main>
+            <aside>
+                <menu id="op">
+                    <button class="op icon"></button>
+                    <button class="op icon"></button>
+                    <button class="op icon"></button>
+                    <button class="op icon"></button>
+                    <button class="op icon"></button>
+                    <button class="op icon"></button>
+                    <button class="op icon"></button>
+                    <button class="op icon"></button>
+                </menu>
+            </aside>
+            <section id="main">
+                <canvas id="artifactCanvas">
+
+                </canvas>
+                <section>
+                    <section id="thumbline">
+                        <div class="page-thumb"></div>
+                        <div class="page-thumb"></div>
+                    </section>
+                    <section id="controls">
+                        <section class="button-group">
+
+                            <button class="tertiary text real light"></button>
+                            <button class="tertiary text real light"></button>
+                            <button class="tertiary text real light"></button>
+                        </section>
+                        <section class="button-group">
+
+                            <button class="tertiary icon light"></button>
+                            <button class="tertiary icon light"></button>
+                            <button class="tertiary icon light"></button>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </main>
+		<script type="module" src="/main.js"></script>
+	</body>
+</html>

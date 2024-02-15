@@ -1,0 +1,148 @@
+:root {
+    --teal: #00C4CC;
+    --primary: #7D2AE8;
+    --one-u: 8px;
+    --two-u: 16px;
+    --three-u: 24px;
+    --grey-background: #EBECF0;
+    --black-20: rgba(53, 71, 90, 0.20);
+    --black-30: rgba(43, 59, 74, 0.3);
+    --surface-shadow: 0px 10.303px 20.606px 0px rgba(0, 0, 0, 0.07);
+    --handle-shadow: 0px 2px 4px -1px var(--Shadow-shadowHandle, rgba(64, 87, 109, 0.30)), 0px 0px 0px 1px var(--Shadow-shadowBorder, rgba(64, 87, 109, 0.04));
+}
+
+body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+header, main {
+    border-radius: var(--one-u);
+}
+
+header {
+    background: linear-gradient(90deg, var(--teal) 0%, var(--primary) 100%);
+    padding: var(--two-u);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* flex-direction: row; */
+}
+
+.button-group {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+button {
+    /* background-color: white; */
+    border: none;
+    min-height: 12px;
+    max-height: 40px;
+
+    border-radius: var(--one-u);
+}
+
+button.primary.dark {
+    background-color: white;
+}
+
+button.secondary.dark {
+    background-color: var(--black-30);
+}
+
+button.primary.text, button.secondary.text {
+    width: 124px;
+    height: 40px;
+}
+
+button.tertiary.dark {
+    background-color: white;
+}
+
+button.tertiary.light {
+    background-color: var(--black-20);
+}
+
+button.tertiary.text {
+    width: 84px;
+    height: 12px;
+}
+
+button.icon {
+    width: 24px;
+    height: 24px;
+}
+
+button.tertiary.icon {
+
+}
+
+button.op.icon {
+    background-color: var(--grey-background);
+    width: 40px;
+    height: 40px;
+}
+
+menu#op {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    gap: 16px;
+    border-radius: var(--one-u);
+
+    box-shadow: var(--surface-shadow);
+}
+
+main {
+    background-color: var(--grey-background);
+    padding: var(--one-u);
+    display: flex;
+    gap: 8px;
+    /* flex-direction:  */
+}
+
+/* canvas {
+    width: 100%;
+    height: 100%;
+} */
+
+#thumbline {
+    display: flex;
+    padding: var(--two-u);
+    padding-bottom: var(--one-u);
+    gap: var(--one-u)
+}
+
+div.page-thumb {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--one-u);
+    box-shadow: var(--handle-shadow);
+
+}
+
+section#main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+section#controls {
+    display: flex;
+    justify-content: space-between;
+}
+
+section#canvas {
+    height: 100%;
+    
+}
+
+section#controls section.button-group {
+    gap: var(--one-u);
+}
