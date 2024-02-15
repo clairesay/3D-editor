@@ -9,12 +9,12 @@ const camera = new THREE.PerspectiveCamera(20, canvas.clientWidth/canvas.clientH
 const renderer = new THREE.WebGLRenderer( { canvas: artifactCanvas } );
 renderer.setSize( canvas.clientWidth, canvas.clientHeight );
 
-
 scene.background = new THREE.Color( 0xEBECF0 );
 
 const geometry = new THREE.BoxGeometry(1, 1, 1);
-const material = new THREE.MeshBasicMaterial({ color: 0xfefefe });
+const material = new THREE.MeshBasicMaterial({ color: 0xeeeee });
 const cube = new THREE.Mesh(geometry, material);
+// cube.receiveShadow = true;
 scene.add(cube);
 
 camera.position.z = 5;
