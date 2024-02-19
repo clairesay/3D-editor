@@ -29,25 +29,25 @@ directionalLightTwo.position.y = -1;
 directionalLightTwo.position.z = -1;
 scene.add( directionalLightTwo );
 
-const directionalLightThree = new THREE.DirectionalLight( 0x333333, 0.8 );
-directionalLightThree.position.x = 1;
-directionalLightThree.position.y = 1;
-directionalLightThree.position.z = 1;
+// const directionalLightThree = new THREE.DirectionalLight( 0x333333, 0.8 );
+// directionalLightThree.position.x = 1;
+// directionalLightThree.position.y = 1;
+// directionalLightThree.position.z = 1;
 
-const directionalLightFour = new THREE.DirectionalLight( 0x333333, 0.8 );
-directionalLightFour.position.x = -1;
-directionalLightFour.position.y = -1;
-directionalLightFour.position.z = -1;
+// const directionalLightFour = new THREE.DirectionalLight( 0x333333, 0.8 );
+// directionalLightFour.position.x = -1;
+// directionalLightFour.position.y = -1;
+// directionalLightFour.position.z = -1;
 
-const directionalLightFive = new THREE.DirectionalLight( 0xA2B9D4, 0.8 );
-directionalLightFive.position.x = 1;
-directionalLightFive.position.y = 1;
-directionalLightFive.position.z = 1;
+// const directionalLightFive = new THREE.DirectionalLight( 0xA2B9D4, 0.8 );
+// directionalLightFive.position.x = 1;
+// directionalLightFive.position.y = 1;
+// directionalLightFive.position.z = 1;
 
-const directionalLightSix = new THREE.DirectionalLight( 0xA2B9D4, 0.8 );
-directionalLightSix.position.x = -1;
-directionalLightSix.position.y = -1;
-directionalLightSix.position.z = -1;
+// const directionalLightSix = new THREE.DirectionalLight( 0xA2B9D4, 0.8 );
+// directionalLightSix.position.x = -1;
+// directionalLightSix.position.y = -1;
+// directionalLightSix.position.z = -1;
 
 
 const mtlLoader = new MTLLoader()
@@ -104,14 +104,14 @@ const go = new THREE.PlaneGeometry( 2, 0.9);
 const ma = new THREE.MeshBasicMaterial( {color: 0xff000, side: THREE.DoubleSide} );
 const plane1 = new THREE.Mesh( go, ma );
 plane1.translateZ( 0.965 );
-plane1.name = "two";
+plane1.name = "front";
 scene.add( plane1 );
 
 const go2 = new THREE.PlaneGeometry( 2, 0.9);
 const ma2 = new THREE.MeshBasicMaterial( {color: 0xffff00, side: THREE.DoubleSide} );
 const plane2 = new THREE.Mesh( go2, ma2 );
 plane2.translateZ( -1.05 );
-plane2.name = "three";
+plane2.name = "back";
 scene.add( plane2 );
 
 
@@ -121,7 +121,7 @@ const plane3 = new THREE.Mesh( go3, ma3 );
 plane3.translateX( -1);
 plane3.translateZ( -0.035 );
 plane3.rotateY(-0.5 * Math.PI);
-plane3.name = "four";
+plane3.name = "left";
 scene.add( plane3 );
 
 const go4 = new THREE.PlaneGeometry( 2, 0.9);
@@ -130,7 +130,7 @@ const plane4 = new THREE.Mesh( go4, ma4 );
 plane4.translateX( 1.02);
 plane4.translateZ( -0.035 );
 plane4.rotateY(-0.5 * Math.PI);
-plane4.name = "five";
+plane4.name = "right";
 scene.add( plane4 );
 
 
@@ -164,21 +164,57 @@ controls.maxDistance = 20;
   });
 
 
-// material special
-const tex = new THREE.TextureLoader().load('./sideborder.png');
+const tex = new THREE.TextureLoader().load('./rect1.svg');
 const borderonly = new THREE.MeshBasicMaterial({
   map: tex,
   transparent: true
 });
 
-const textop = new THREE.TextureLoader().load('./topborder.png');
-const topborderonly = new THREE.MeshBasicMaterial({
-  map: textop,
-  transparent: true
+const blank = new THREE.TextureLoader().load('./rect4.svg');
+const blankonly = new THREE.MeshBasicMaterial({
+    map: blank,
+    transparent: true
 });
 
-const blankonly = new THREE.MeshBasicMaterial({ color: 0xffffff });
+const topHover = new THREE.MeshBasicMaterial({
+    map: new THREE.TextureLoader().load('./topIllustrationBorder.svg'),
+    transparent: true
+  });
+  
+const topDefault = new THREE.MeshBasicMaterial({
+    map: new THREE.TextureLoader().load('./topIllustrationNoBorder.svg'),
+    transparent: true
+})
 
+const leftDefault = new THREE.MeshBasicMaterial({
+    map: new THREE.TextureLoader().load('./leftNoBorder.svg'),
+    transparent: true
+})
+
+const leftHover = new THREE.MeshBasicMaterial({
+    map: new THREE.TextureLoader().load('./leftBorder.svg'),
+    transparent: true
+})
+
+const rightDefault = new THREE.MeshBasicMaterial({
+    map: new THREE.TextureLoader().load('./rightNoBorder.svg'),
+    transparent: true
+})
+
+const rightHover = new THREE.MeshBasicMaterial({
+    map: new THREE.TextureLoader().load('./rightBorder.svg'),
+    transparent: true
+})
+
+const frontDefault = new THREE.MeshBasicMaterial({
+    map: new THREE.TextureLoader().load('./frontNoBorder.svg'),
+    transparent: true
+})
+
+const frontHover = new THREE.MeshBasicMaterial({
+    map: new THREE.TextureLoader().load('./frontBorder.svg'),
+    transparent: true
+})
 
 function renda() {
 
@@ -195,13 +231,52 @@ function renda() {
         } else {
             if (scene.children[i] == hovered.object) {
 
-                if (hovered.object.name == "top" || hovered.object.name == "bottom") {
-                    scene.children[i].material = topborderonly;
-                } else {
-                    scene.children[i].material = borderonly;
+                switch (scene.children[i].name) {
+                    case "top":
+                        scene.children[i].material = topHover;
+                        break;
+                    case "bottom":
+                        scene.children[i].material = topHover;
+                        break;  
+                    case "left":
+                        scene.children[i].material = leftHover;
+                        break;  
+                    case "right":
+                        scene.children[i].material = rightHover;
+                        break;  
+                    case "front":
+                        scene.children[i].material = frontHover;
+                        break;  
+                    case "back":
+                        scene.children[i].material = borderonly;
+                        break;  
+                    default:
+                        break;
                 }
             } else {
-                scene.children[i].material = blankonly;
+
+                switch (scene.children[i].name) {
+                    case "top":
+                        scene.children[i].material = topDefault;
+                        break;
+                    case "bottom":
+                        scene.children[i].material = topDefault;
+                        break;  
+                    case "left":
+                        scene.children[i].material = leftDefault;
+                        break;  
+                    case "right":
+                        scene.children[i].material = rightDefault;
+                        break;  
+                    case "front":
+                        scene.children[i].material = frontDefault;
+                        break;  
+                    case "back":
+                        scene.children[i].material = blankonly;
+                        break;  
+                    default:
+                        break;
+                }
             }
         }
     
@@ -209,9 +284,35 @@ function renda() {
     }
 
     } else {
-        // for (let i = 0; i < scene.children.length; i ++) {
-        //     scene.children[i].material = blankonly;
-        // }
+        for (let i = 0; i < scene.children.length; i ++) {
+            switch (scene.children[i].name) {
+                case "top":
+                    scene.children[i].material = topDefault;
+                    break;
+                case "bottom":
+                    scene.children[i].material = topDefault;
+                    break;  
+                case "left":
+                    scene.children[i].material = leftDefault;
+                    break;  
+                case "right":
+                    scene.children[i].material = rightDefault;
+                    break;  
+                case "front":
+                    scene.children[i].material = frontDefault;
+                    break;  
+                case "back":
+                    scene.children[i].material = blankonly;
+                    break;  
+                default:
+                    break;
+            }
+            // if (scene.children[i].name == "top" || scene.children[i].name == "bottom") {
+            //     scene.children[i].material = topDefault;
+            // } else {
+            //     scene.children[i].material = blankonly;
+            // }
+        }
     }
 
 }
@@ -234,10 +335,9 @@ animate();
 
 
 document.querySelector("div.page-thumb").addEventListener("click", ()=> {
-    // scene.remove(directionalLightOne);
-    // scene.remove(directionalLightTwo);
-    // scene.add(directionalLightThree);
-    // scene.add(directionalLightFour);
+
+
+    document.querySelector("div.page-thumb").classList.add("selected");
 
     new TWEEN.Tween(camera.rotation)
       .to({ x:-1.5, y:0 , z:0 }, 1500)
@@ -253,3 +353,72 @@ document.querySelector("div.page-thumb").addEventListener("click", ()=> {
     controls.update();
 })
 
+const swatchTrigger = document.querySelector("div.swatch");
+swatchTrigger.addEventListener("click", ()=> {
+    let swatchMenu = document.querySelector("menu.swatch-menu");
+    if (swatchTrigger.classList.contains("active")) {
+        swatchTrigger.classList.remove("active");
+        swatchMenu.classList.remove("open");
+    } else {
+        swatchTrigger.classList.add("active");
+        swatchMenu.classList.add("open");
+    }
+})
+
+const swatches = document.querySelectorAll("button.swatch")
+var currentSwatch = "white"; 
+for (let i = 0; i < swatches.length; i ++) {
+    // var swatch = swatches[i];
+    swatches[i].addEventListener("click", (swatch)=> {
+
+        if (swatch.target.classList.contains("selected") == false) {
+            for (let j = 0; j < swatches.length; j ++) {
+                swatches[j].classList.remove("selected");
+            }
+            swatch.target.classList.add("selected");
+            currentSwatch = swatch.target.id;
+            updateSwatch();
+        }
+    })
+}
+
+function updateSwatch() {
+    switch (currentSwatch) {
+        case "black":
+            directionalLightOne.color.setHex( 0x333333 );
+            directionalLightTwo.color.setHex( 0x333333 );
+            break;
+        case "teal":
+            directionalLightOne.color.setHex( 0x4CEEF6 );
+            directionalLightTwo.color.setHex( 0x4CEEF6 );
+            break;
+        case "pink":
+            directionalLightOne.color.setHex( 0xFF98C1 );
+            directionalLightTwo.color.setHex( 0xFF98C1 );
+            break;
+        case "grey":
+            directionalLightOne.color.setHex( 0xE8F7FF );
+            directionalLightTwo.color.setHex( 0xE8F7FF );
+            break;
+        case "white":
+            directionalLightOne.color.setHex( 0xfefefe );
+            directionalLightTwo.color.setHex( 0xfefefe );
+            break;
+    }
+}
+
+document.body.onkeyup = function(e) {
+    if (e.key == " " ||
+        e.code == "Space" ||      
+        e.keyCode == 32      
+    ) {
+        document.querySelector("menu.swatch-menu").classList.remove("open");
+        let menu = document.querySelector("menu.contextual-toolbar");
+        if (menu.classList.contains("open")) {
+            menu.classList.remove("open");
+            swatchTrigger.classList.remove("active");
+        } else {
+            menu.classList.add("open");
+        }
+    }
+}

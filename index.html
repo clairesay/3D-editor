@@ -41,17 +41,36 @@
                 </menu>
             </aside>
             <section id="main">
+                <menu class="contextual-toolbar open">
+
+                    <div class="swatch">
+                        <button class="tertiary icon" id="rainbow"></button>
+                    </div>
+
+                    <img src="./assets/divider.svg">
+                    <button class="tertiary icon">
+                        <img src="./assets/icon-overflow.svg">
+                    </button>
+                    <menu class="swatch-menu">
+                        <button class="swatch" id="black"></button>
+                        <button class="swatch" id="pink"></button>
+                        <button class="swatch" id="teal"></button>
+                        <button class="swatch" id="grey"></button>
+                        <button class="swatch selected" id="white"></button>
+                    </menu>
+                </menu>
+
                 <canvas id="artifactCanvas">
 
                 </canvas>
                 <section>
                     <section id="thumbline">
-                        <div class="page-thumb"></div>
-                        <div class="page-thumb"></div>
-                        <div class="page-thumb"></div>
-                        <div class="page-thumb"></div>
-                        <div class="page-thumb"></div>
-                        <div class="page-thumb"></div>
+                        <div class="page-thumb"><label>Top</label><img src="topNoBorder.svg"></div>
+                        <div class="page-thumb"><label>Bottom</label></div>
+                        <div class="page-thumb"><label>Front</label><img src="frontNoBorder.svg"></div>
+                        <div class="page-thumb"><label>Back</label></div>
+                        <div class="page-thumb"><label>Left</label><img src="leftNoBorder.svg"></div>
+                        <div class="page-thumb"><label>Right</label><img src="rightNoBorder.svg"></div>
                     </section>
                     <section id="controls">
                         <section class="button-group">

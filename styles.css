@@ -1,14 +1,22 @@
 :root {
     --teal: #00C4CC;
     --primary: #7D2AE8;
+    --half-u: 4px;
     --one-u: 8px;
+    --one-and-half-u: 12px;
     --two-u: 16px;
     --three-u: 24px;
     --grey-background: #EBECF0;
+    --black-07: rgba(64, 87, 109, 0.07);
     --black-20: rgba(53, 71, 90, 0.20);
     --black-30: rgba(43, 59, 74, 0.3);
     --surface-shadow: 0px 10.303px 20.606px 0px rgba(0, 0, 0, 0.07);
     --handle-shadow: 0px 2px 4px -1px var(--Shadow-shadowHandle, rgba(64, 87, 109, 0.30)), 0px 0px 0px 1px var(--Shadow-shadowBorder, rgba(64, 87, 109, 0.04));
+}
+
+@font-face {
+    font-family: "CanvaSans";
+    src: url("./fonts/CanvaSans-Regular.woff2") format("woff2"),
 }
 
 body {
@@ -104,6 +112,7 @@ main {
     display: flex;
     gap: 8px;
     /* flex-direction:  */
+    position:relative;
 }
 
 /* canvas {
@@ -123,7 +132,27 @@ div.page-thumb {
     height: 56px;
     border-radius: var(--one-u);
     box-shadow: var(--handle-shadow);
+    display: flex;
+    align-items: flex-end;
+    border: 2px solid transparent;
+    /* padding: 8px; */
+    /* background-image: url(''); */
+}
 
+div.page-thumb.selected, .selected {
+    border: 2px solid var(--primary);
+}
+
+div.page-thumb > img {
+    position: absolute;
+    width: 56px;
+    height: 56px;
+}
+
+div.page-thumb > label {
+    font-family: 'CanvaSans';
+    font-size: 12px;
+    padding: 8px;
 }
 
 section#main {
@@ -145,4 +174,114 @@ section#canvas {
 
 section#controls section.button-group {
     gap: var(--one-u);
+}
+
+
+
+menu.contextual-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    background-color: white;
+    /* border: 8px; */
+    padding: var(--half-u);
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    border-radius: var(--one-and-half-u);
+    box-shadow: var(--surface-shadow);
+    visibility: hidden;
+}
+
+menu.contextual-toolbar.open {
+    visibility: visible;
+}
+
+menu.contextual-toolbar button {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    transition: auto;
+}
+
+div.swatch {
+    background-color: transparent;
+    border-radius: var(--one-u);
+    padding: 4px;
+}
+
+div.swatch:hover {
+    background-color: var(--black-07);
+    cursor: pointer;
+}
+
+div.swatch.active {
+    background-color: var(--black-20);
+}
+
+button#rainbow {
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    background-image: url('./assets/default-fill.png');
+}
+
+menu.swatch-menu {
+    position: absolute;
+    display: flex;
+    border-radius: var(--one-and-half-u);
+    box-shadow: var(--surface-shadow);
+    gap: var(--half-u);
+    background-color: white;
+    padding: var(--one-u);
+    top: 115%;
+    left: 0;
+    visibility: hidden; 
+}
+
+menu.swatch-menu > button.swatch {
+    width: 28px;
+    height: 28px;
+    /* border: 2px solid var(--primary); */
+    border-radius: 100%;
+    border: 1px var(--black-07) solid;
+}
+
+button#rainbow:hover, menu.swatch-menu > button.swatch:hover {
+    cursor: pointer;
+}
+
+menu.swatch-menu > button.swatch:hover {
+    border: 2px var(--black-20) solid;
+}
+
+menu.swatch-menu > button.swatch.selected {
+    border: 1px var(--primary) solid;
+}
+
+button.swatch:nth-child(1) {
+    background-color: black;
+}
+
+button.swatch:nth-child(2) {
+    background-color: #FF98C1;
+}
+
+button.swatch:nth-child(3) {
+    background-color: #4CEEF6;
+}
+
+button.swatch:nth-child(4) {
+    background-color: #E8F7FF;
+}
+
+button.swatch:nth-child(5) {
+    background-color: #ffffff;
+}
+
+menu.swatch-menu.open {
+    visibility: visible;
 }
