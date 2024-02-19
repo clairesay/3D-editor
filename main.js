@@ -68,15 +68,15 @@ mtlLoader.load('./white.mtl', materials => {
 // var grid = new THREE.GridHelper(100, 10);
 // scene.add(grid);
 
-const texture = new THREE.TextureLoader().load('./boxtop.png');
-const aMaterial = new THREE.MeshBasicMaterial({
-  map: texture,
-  transparent: true
-});
+// const texture = new THREE.TextureLoader().load('./boxtop.png');
+// const aMaterial = new THREE.MeshBasicMaterial({
+//   map: texture,
+//   transparent: true
+// });
 
 var geo = new THREE.PlaneGeometry( 2, 2. );
 var mat = new THREE.MeshBasicMaterial( { color: 0x0000ff } );
-var floor = new THREE.Mesh( geo, aMaterial );
+var floor = new THREE.Mesh( geo, mat );
 floor.material.side = THREE.DoubleSide;
 floor.rotation.x = -0.5 * Math.PI
 floor.translateX( 0 );
@@ -167,11 +167,11 @@ controls.maxDistance = 20;
   });
 
 
-const tex = new THREE.TextureLoader().load('./rect1.svg');
-const borderonly = new THREE.MeshBasicMaterial({
-  map: tex,
-  transparent: true
-});
+// const tex = new THREE.TextureLoader().load('./rect1.svg');
+// const borderonly = new THREE.MeshBasicMaterial({
+//   map: tex,
+//   transparent: true
+// });
 
 const blank = new THREE.TextureLoader().load('./rect4.svg');
 const blankonly = new THREE.MeshBasicMaterial({
