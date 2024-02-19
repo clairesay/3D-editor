@@ -1,0 +1,51 @@
+<svg width="101" height="101" viewBox="0 0 101 101" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g clip-path="url(#clip0_59_15311)">
+<g clip-path="url(#clip1_59_15311)">
+<rect width="101" height="101" fill="url(#pattern0)" fill-opacity="0.15"/>
+<rect width="101" height="101" fill="url(#paint0_angular_59_15311)"/>
+<rect width="101" height="101" fill="url(#paint1_radial_59_15311)"/>
+</g>
+<g filter="url(#filter0_dd_59_15311)">
+<rect x="25.25" y="25.25" width="50.5" height="50.5" rx="25.25" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M48.6059 63.7563C48.6059 64.8022 49.4537 65.6501 50.4996 65.6501C51.5455 65.6501 52.3934 64.8022 52.3934 63.7563V52.3938H63.7559C64.8017 52.3938 65.6496 51.546 65.6496 50.5001C65.6496 49.4542 64.8017 48.6063 63.7559 48.6063H52.3934V37.2438C52.3934 36.198 51.5455 35.3501 50.4996 35.3501C49.4537 35.3501 48.6059 36.198 48.6059 37.2438V48.6063H37.2434C36.1975 48.6063 35.3496 49.4542 35.3496 50.5001C35.3496 51.546 36.1975 52.3938 37.2434 52.3938H48.6059V63.7563Z" fill="#0D1216"/>
+</g>
+</g>
+<defs>
+<pattern id="pattern0" patternContentUnits="objectBoundingBox" width="0.237624" height="0.237624">
+<use xlink:href="#image0_59_15311" transform="scale(0.00371287)"/>
+</pattern>
+<filter id="filter0_dd_59_15311" x="17.25" y="19.25" width="66.5" height="66.5" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="2"/>
+<feGaussianBlur stdDeviation="4"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.223529 0 0 0 0 0.298039 0 0 0 0 0.376471 0 0 0 0.15 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_59_15311"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feMorphology radius="1" operator="dilate" in="SourceAlpha" result="effect2_dropShadow_59_15311"/>
+<feOffset/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.25098 0 0 0 0 0.341176 0 0 0 0 0.427451 0 0 0 0.07 0"/>
+<feBlend mode="normal" in2="effect1_dropShadow_59_15311" result="effect2_dropShadow_59_15311"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_59_15311" result="shape"/>
+</filter>
+<radialGradient id="paint0_angular_59_15311" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(50.5 50.5) scale(50.5)">
+<stop stop-color="#FF0000"/>
+<stop offset="0.159709" stop-color="#FFE600"/>
+<stop offset="0.388885" stop-color="#00FF00"/>
+<stop offset="0.592018" stop-color="#0047FF"/>
+<stop offset="0.83682" stop-color="#DE1CFF"/>
+<stop offset="1" stop-color="#FF0000"/>
+</radialGradient>
+<radialGradient id="paint1_radial_59_15311" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(50.5 50.5) rotate(90) scale(50.5)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="clip0_59_15311">
+<rect width="101" height="101" rx="50.5" fill="white"/>
+</clipPath>
+<clipPath id="clip1_59_15311">
+<rect width="101" height="101" fill="white"/>
+</clipPath>
+<image id="image0_59_15311" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAA40lEQVR4Xu3bQQ6EQAhEUbj/oXsO8Sdh4XOvJAi/qkF3Zt6E6710++xuiD6T40uACtACqYlzD2IACFKBkoHcgmSQDJJBMngKIT6ADygF6DSYfcCLTzg/z0eGrASogDbT0gKxB2MB5pkiBoBgrEEMwIBjLx9fAAiCIAhygmkkRgYjhWMHditsL2AvYC+QIHjdwzk+BmAABmBAWc1kCF0bKRAEQRAEQRAMGaACbaCUz/P5BRiKxhQaiV07uRjfYgQDMKDpGAhGCMUCzD4CBEEw1iAGYIBPZMJh+g8/P8cKpAJfV4EfMee/sLtaEFIAAAAASUVORK5CYII="/>
+</defs>
+</svg>

@@ -45,6 +45,10 @@ header {
     align-items: center;
 }
 
+.button-group:first-child {
+    gap: 24px;
+}
+
 button {
     /* background-color: white; */
     border: none;
@@ -85,8 +89,9 @@ button.icon {
     height: 24px;
 }
 
-button.tertiary.icon {
-
+header button.tertiary.icon:first-child {
+    width: 20px;
+    height: 20px;
 }
 
 button.op.icon {
@@ -139,6 +144,10 @@ div.page-thumb {
     /* background-image: url(''); */
 }
 
+div.page-thumb:hover {
+    cursor: pointer;
+}
+
 div.page-thumb.selected, .selected {
     border: 2px solid var(--primary);
 }
@@ -152,7 +161,7 @@ div.page-thumb > img {
 div.page-thumb > label {
     font-family: 'CanvaSans';
     font-size: 12px;
-    padding: 8px;
+    padding: 4px;
 }
 
 section#main {
@@ -222,10 +231,13 @@ div.swatch.active {
     background-color: var(--black-20);
 }
 
-button#rainbow {
+menu.contextual-toolbar > div.swatch > button {
     width: 24px;
     height: 24px;
     border-radius: 100%;
+}
+
+#rainbow {
     background-image: url('./assets/default-fill.png');
 }
 
@@ -242,46 +254,57 @@ menu.swatch-menu {
     visibility: hidden; 
 }
 
+menu.swatch-menu.open {
+    visibility: visible; 
+}
+
+/* menu.swatch-menu.open {
+    visibility: visible;
+} */
+
 menu.swatch-menu > button.swatch {
     width: 28px;
     height: 28px;
     /* border: 2px solid var(--primary); */
     border-radius: 100%;
-    border: 1px var(--black-07) solid;
+    border: 1.5px var(--black-07) solid;
 }
 
-button#rainbow:hover, menu.swatch-menu > button.swatch:hover {
+menu.contextual-toolbar > div.swatch > button:hover, menu.swatch-menu > button.swatch:hover {
     cursor: pointer;
 }
 
 menu.swatch-menu > button.swatch:hover {
-    border: 2px var(--black-20) solid;
+    border: 1.5px var(--black-20) solid;
 }
 
 menu.swatch-menu > button.swatch.selected {
-    border: 1px var(--primary) solid;
+    border: 1.5px var(--primary) solid;
 }
 
-button.swatch:nth-child(1) {
+#black {
     background-color: black;
 }
 
-button.swatch:nth-child(2) {
+#pink {
     background-color: #FF98C1;
 }
 
-button.swatch:nth-child(3) {
+#teal {
     background-color: #4CEEF6;
 }
 
-button.swatch:nth-child(4) {
+#grey {
     background-color: #E8F7FF;
 }
 
-button.swatch:nth-child(5) {
+#white {
     background-color: #ffffff;
 }
 
-menu.swatch-menu.open {
-    visibility: visible;
+button.swatch:nth-child(6) {
+    background-image: url('./assets/add.png');
+    background-size: 28px 28px;
+    background-position: center;
+    /* border-color: var(--grey-background); */
 }

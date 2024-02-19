@@ -146,9 +146,12 @@ scene.add( plane4 );
 camera.position.z = 2;
 
 const controls = new OrbitControls( camera, renderer.domElement );
-// controls.enableDamping = true; // an animation loop is required when either damping or auto-rotation are enabled
+controls.enableDamping = true; // an animation loop is required when either damping or auto-rotation are enabled
+// controls.enablePan = false;
+controls.dampingFactor = 0.3;
+controls.update();
 controls.maxPolarAngle = Math.PI / 2;
-controls.screenSpacePanning = true;
+// controls.screenSpacePanning = true;
 controls.minDistance = 1;
 controls.maxDistance = 20;
 
@@ -354,14 +357,16 @@ document.querySelector("div.page-thumb").addEventListener("click", ()=> {
 })
 
 const swatchTrigger = document.querySelector("div.swatch");
+const swatchMenu = document.querySelector("menu.swatch-menu");
 swatchTrigger.addEventListener("click", ()=> {
-    let swatchMenu = document.querySelector("menu.swatch-menu");
+    console.log("log")
     if (swatchTrigger.classList.contains("active")) {
         swatchTrigger.classList.remove("active");
         swatchMenu.classList.remove("open");
     } else {
         swatchTrigger.classList.add("active");
         swatchMenu.classList.add("open");
+        console.log('open')
     }
 })
 
@@ -377,12 +382,16 @@ for (let i = 0; i < swatches.length; i ++) {
             }
             swatch.target.classList.add("selected");
             currentSwatch = swatch.target.id;
+            
             updateSwatch();
         }
     })
 }
 
 function updateSwatch() {
+    // document.querySelector('menu.contextual-toolbar > div.swatch > button').style.backgroundImage = transparent;
+
+    document.querySelector('menu.contextual-toolbar > div.swatch > button').id = currentSwatch;
     switch (currentSwatch) {
         case "black":
             directionalLightOne.color.setHex( 0x333333 );
@@ -408,17 +417,20 @@ function updateSwatch() {
 }
 
 document.body.onkeyup = function(e) {
-    if (e.key == " " ||
-        e.code == "Space" ||      
-        e.keyCode == 32      
+    if (e.key == "a" ||
+        e.code == "a" ||      
+        e.keyCode == 98      
     ) {
-        document.querySelector("menu.swatch-menu").classList.remove("open");
+
+        swatchMenu.classList.remove("open");
+        
         let menu = document.querySelector("menu.contextual-toolbar");
         if (menu.classList.contains("open")) {
             menu.classList.remove("open");
             swatchTrigger.classList.remove("active");
         } else {
             menu.classList.add("open");
+            swatchTrigger.classList.remove("active");
         }
     }
 }
