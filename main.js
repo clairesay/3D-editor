@@ -6,11 +6,14 @@ import * as TWEEN from '@tweenjs/tween.js'
 
 const scene = new THREE.Scene();
 const canvas = document.querySelector('canvas');
-
+console.log(canvas.clientWidth);
+console.log(canvas.clientHeight);
+console.log(canvas);
 const camera = new THREE.PerspectiveCamera(20, canvas.clientWidth/canvas.clientHeight, 1, 500);
 
 const renderer = new THREE.WebGLRenderer( { canvas: artifactCanvas } );
 renderer.setSize( canvas.clientWidth, canvas.clientHeight );
+
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap; // default THREE.PCFShadowMap
 
@@ -85,9 +88,9 @@ floor.translateZ( 0.462 );
 floor.name = "top";
 scene.add( floor );
 // console.log(floor);
-console.log(floor.position.x);
-console.log(floor.position.y);
-console.log(floor.position.z);
+// console.log(floor.position.x);
+// console.log(floor.position.y);
+// console.log(floor.position.z);
 
 var geo1 = new THREE.PlaneGeometry( 2, 2. );
 var mat1 = new THREE.MeshBasicMaterial( { color: 0x0000ff } );

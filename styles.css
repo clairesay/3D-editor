@@ -308,3 +308,78 @@ button.swatch:nth-child(6) {
     background-position: center;
     /* border-color: var(--grey-background); */
 }
+
+@media (width <= 600px) {
+    body {
+        background-color: lightblue;
+        padding: 0;
+        gap: 0;
+        height: 100%;
+        min-height: 804px;
+        margin-right: 45px;
+    }
+
+    header {
+        height: 64px;
+        border-radius: 0;
+    }
+
+    header button.tertiary.icon:first-child, button.primary.text.dark, button.primary.text.light, button.secondary.text.dark, button.secondary.text.light, button.tertiary.text.dark, button.tertiary.text.light {
+        width: 24px;
+        height: 24px;
+        color: white;
+    }
+
+    section.button-group, section.button-group:first-child {
+        gap: 24px;
+    }
+
+    main {
+        flex-direction: column-reverse;
+        padding: 0;
+        min-height: 700px;
+        border-radius: 0;
+        align-items: center;
+    }
+    
+    canvas#artifactCanvas {
+        width: 100%;
+        height: 100%;
+    }
+
+    button.secondary.dark {
+        background-color: white;
+    }
+
+    menu.contextual-toolbar.open {
+        left: calc(50% - 36px);
+    }
+
+    #thumbline {
+        width: 200%;
+    }
+
+    menu#op {
+        flex-direction: row;
+        border-radius: 0;
+        height: 64px;
+        align-items: center;
+        gap: 24px;
+    }
+
+    menu#op * {
+        min-width: 52px;
+        min-height: 52px;
+    }
+
+    section#controls {
+        display: none;
+    }
+
+}
+
+/* @media only screen and (max-width: 600px) {
+    body {
+      background-color: lightblue;
+    }
+  } */
