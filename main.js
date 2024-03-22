@@ -11,7 +11,7 @@ console.log(canvas.clientHeight);
 console.log(canvas);
 const camera = new THREE.PerspectiveCamera(20, canvas.clientWidth/canvas.clientHeight, 1, 500);
 
-const renderer = new THREE.WebGLRenderer( { canvas: artifactCanvas } );
+const renderer = new THREE.WebGLRenderer( { canvas: artifactCanvas, antialias: true } );
 renderer.setSize( canvas.clientWidth, canvas.clientHeight );
 
 renderer.shadowMap.enabled = true;
